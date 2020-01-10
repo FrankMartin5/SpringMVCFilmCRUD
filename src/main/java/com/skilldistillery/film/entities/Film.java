@@ -4,6 +4,9 @@ public class Film {
 	
 	// ToDO import film class
 	// 		import DAO
-	
+	public Film getFilmByID() {
+		return null;
+		
+	}
 
 }
