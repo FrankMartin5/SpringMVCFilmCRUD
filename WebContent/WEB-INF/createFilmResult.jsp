@@ -14,9 +14,9 @@
 			<ul>
 				<li>${film.title}</li>
 				<li>${film.langId}</li>
-				<li>${film.rentDur}</li>
+				<li>${film.rating}</li>
 				<li>${film.rate}</li>
-				<li>${film.repCost}</li>
+				<li>${film.desc}</li>
 			</ul>
 		</c:when>
 	</c:choose>
