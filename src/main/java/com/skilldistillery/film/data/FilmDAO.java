@@ -8,8 +8,8 @@ import com.skilldistillery.film.entities.Film;
 
 
 public interface FilmDAO {
-	 public Film findFilmById(int filmId) throws SQLException;
-	  public Actor findActorById(int actorId) throws SQLException;
+	 public Film findFilmById(int filmId);
+	  public Actor findActorById(int actorId);
 	  public List<Actor> findActorsByFilmId(int filmId);
 	  public List<Film> findFilmsByKeyword(String keyword);
 	  public Film createFilm(Film film);
