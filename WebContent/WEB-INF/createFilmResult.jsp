@@ -15,7 +15,7 @@
 				<li>${film.title}</li>
 				<li>${film.landId}</li>
 				<li>${film.rentDur}</li>
-				<li>${fiilm.rate}</li>
+				<li>${film.rate}</li>
 				<li>${film.repCost}</li>
 			</ul>
 		</c:when>
