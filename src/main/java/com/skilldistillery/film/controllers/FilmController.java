@@ -5,7 +5,10 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class FilmController {
-	@Autowired
-	private DAOInterface dao;
+	
+//	@Autowired
+//	private DAOInterface dao;
+	
+	
 
 }
