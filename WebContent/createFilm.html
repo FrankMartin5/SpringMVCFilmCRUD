@@ -5,21 +5,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="createFilm.do" method="GET">
+	<form action="createFilm.do" method="POST">
 		Add your film: <br> 
 		Enter Title: <input type="text" name="title"><br>
 		Select Language: 
-		<select>
+		<!-- <select>
 			<option value="English">English</option>
 			<option value="Italian">Italian</option>
 			<option value="Japanese">Japanese</option>
 			<option value="Mandarin">Mandarin</option>
 			<option value="French">French</option>
 			<option value="German">German</option>
-		</select><br>
-		Enter Rental duration: <input type="number" name="rental_duration"><br>
-		Enter Rental Rate: <input type="number" step="0.01" name="rental_rate"><br>
-		Enter Replacement Cost: <input type="number" step="0.01" name="replacement_cost"><br> 
+		</select><br> -->
+		Enter Rental duration: <input type="number" name="rentDur"><br>
+		Enter Rental Rate: <input type="number" step="0.01" name="rate"><br>
+		Enter Replacement Cost: <input type="number" step="0.01" name="repCost"><br> 
 		 <input type="submit"	value="Add your film">
 
 	</form>

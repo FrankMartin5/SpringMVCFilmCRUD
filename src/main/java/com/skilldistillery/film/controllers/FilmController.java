@@ -33,7 +33,7 @@ public class FilmController{
 		return mv;
 	}
 	
-	@RequestMapping(path = "createFilm.do", params = "createFilm", method = RequestMethod.GET)
+	@RequestMapping(path = "createFilm.do", method = RequestMethod.POST)
 	public ModelAndView createFilm(Film filmData) {
 		ModelAndView mv = new ModelAndView();
 		Film film = dao.createFilm(filmData);
