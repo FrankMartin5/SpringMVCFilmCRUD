@@ -13,7 +13,6 @@
 		<c:when test="${! empty film}">
 			<ul>
 				<li>${film.title}</li>
-				<li>${film.langId}</li>
 				<li>${film.rating}</li>
 				<li>${film.rate}</li>
 				<li>${film.desc}</li>
