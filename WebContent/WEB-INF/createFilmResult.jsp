@@ -13,10 +13,10 @@
 		<c:when test="${! empty film}">
 			<ul>
 				<li>${film.title}</li>
-				<li>${film.langId}</li>
+				<%-- <li>${film.langId}</li>
 				<li>${film.rentDur}</li>
 				<li>${film.rate}</li>
-				<li>${film.repCost}</li>
+				<li>${film.repCost}</li> --%>
 			</ul>
 		</c:when>
 	</c:choose>
