@@ -19,12 +19,17 @@ public class FilmController{
 		this.dao = dao;
 	}
 	
+	@RequestMapping(path ="home.do")
+	public String home() {
+		return "home.jsp";
+	}
+	
 	@RequestMapping(path = "GetFilmById.do", params = "Id", method = RequestMethod.GET)
 	public ModelAndView getFilmById(int filmId) {
 		ModelAndView mv = new ModelAndView();
 		Film film = dao.findFilmById(filmId);
 		mv.addObject("film", film);
-		mv.setViewName("home");
+		mv.setViewName("home.jsp");
 		return mv;
 	}
 	
