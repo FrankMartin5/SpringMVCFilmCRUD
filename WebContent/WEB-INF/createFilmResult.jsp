@@ -13,14 +13,12 @@
 		<c:when test="${! empty film}">
 			<ul>
 				<li>${film.title}</li>
-				<li>${film.desc}</li>
-				<li>${film.actors}</li>
-				<li>${fiilm.langId}</li>
+				<li>${film.landId}</li>
+				<li>${film.rentDur}</li>
+				<li>${fiilm.rate}</li>
+				<li>${film.repCost}</li>
 			</ul>
 		</c:when>
-		<c:otherwise>
-			<p>No film found</p>
-		</c:otherwise>
 	</c:choose>
 </body>
 </html>
