@@ -1,0 +1,18 @@
+body {
+	margin: 0;
+}
+
+.findFilm {
+	height: 100vh;
+  background-color: green;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:0 20px;
+  color: white;
+}
