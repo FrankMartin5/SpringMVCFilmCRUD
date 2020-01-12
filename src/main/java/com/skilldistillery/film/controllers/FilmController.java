@@ -53,19 +53,16 @@ public class FilmController{
 		mv.setViewName("deleteFilmResult.jsp");
 		return mv;
 	}
-//	@RequestMapping(path = "deleteFilm.do", method = RequestMethod.POST)
-//	  public String deleteFilm(Film film, RedirectAttributes redir) {
-//	    dao.createFilm(film);
-//	    redir.addFlashAttribute("film", film);
-//	    return "redirect:createFilm.do";
-//	  }
-//	@RequestMapping(path="createFilm.do", method=RequestMethod.GET)
-//	public ModelAndView created() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("deleteFilmResult.jsp");
-//		return mv;
-//	}
-//	
+
+	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
+	public ModelAndView updateFilm(@RequestParam("id") int id) {
+		Film film = dao.findFilmById(id);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("Film", film);
+		mv.setViewName("updateFilmResult.jsp");
+		return mv;
+	}
+	
 	
 	
 	

@@ -14,6 +14,8 @@
 <a href="createFilm.html">Add your own film</a><br>
 <h3>Delete a film</h3>
 <a href="deleteFilm.html">Delete your films</a>
+<h3>Update a film</h3>
+<a href="updateFilm.html">Update your films</a>
 
 </body>
 </html>
