@@ -13,9 +13,10 @@
 		<c:when test="${! empty film}">
 			<ul>
 				<li><strong>Title: </strong>${film.title}</li>
-				<li><strong>Rental Duration: </strong>${film.rentDur}</li>
+				<li><strong>Description: </strong>${film.desc}</li>
+				<li><strong>Release Year: </strong>${film.realeaseYear}</li>
+				<li><strong>Rental Duration:</strong>${film.rentDur}
 				<li><strong>Rental Rate: </strong>${film.rate}</li>
-				<li><strong>Replacement Cost: </strong>${film.repCost}</li>
 			</ul>
 		</c:when>
 	</c:choose>
