@@ -12,20 +12,20 @@ import com.skilldistillery.film.data.FilmDAO;
 import com.skilldistillery.film.entities.Film;
 
 @Controller
-public class FilmController{
-	
+public class FilmController {
+
 	@Autowired
 	private FilmDAO dao;
 
 	public void setDao(FilmDAO dao) {
 		this.dao = dao;
 	}
-	
-	@RequestMapping(path ="home.do")
+
+	@RequestMapping(path = "home.do")
 	public String home() {
 		return "home.jsp";
 	}
-	
+
 	@RequestMapping(path = "GetFilmById.do", params = "filmId", method = RequestMethod.GET)
 	public ModelAndView getFilmById(int filmId) {
 		ModelAndView mv = new ModelAndView();
@@ -34,7 +34,7 @@ public class FilmController{
 		mv.setViewName("filmIdResult.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "createFilm.do", method = RequestMethod.POST)
 	public ModelAndView createFilm(Film filmData) {
 		ModelAndView mv = new ModelAndView();
@@ -43,32 +43,26 @@ public class FilmController{
 		mv.setViewName("createFilmResult.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "deleteFilm.do")
 	public ModelAndView deleteFilm(@RequestParam("id") int id) {
 		Film film = dao.findFilmById(id);
 		boolean deleteFilm = dao.deleteFilm(film);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("Delete",deleteFilm);
+		mv.addObject("Delete", deleteFilm);
 		mv.setViewName("deleteFilmResult.jsp");
 		return mv;
 	}
 
 	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
 	public ModelAndView updateFilm(@RequestParam("id") int id) {
+		System.out.println("In update film.do" + id);
 		Film film = dao.findFilmById(id);
+		dao.updateFilm(film);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("Film", film);
 		mv.setViewName("updateFilmResult.jsp");
 		return mv;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

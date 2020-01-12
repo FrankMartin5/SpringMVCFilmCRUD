@@ -37,8 +37,10 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 			String sql = "SELECT id, title, description, release_year, rating, language_id FROM film WHERE id = ?";
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
+			
 			stmt.setInt(1, filmId);
 			ResultSet filmResult = stmt.executeQuery();
+			
 			if (filmResult.next()) {
 				film = new Film();
 				film.setId(filmResult.getInt("id"));
@@ -49,6 +51,7 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 				film.setLangId(findLanguage(filmResult.getInt("language_id")));
 				film.setActors(findActorsByFilmId(filmId));
 			}
+			
 			filmResult.close();
 			stmt.close();
 			conn.close();
@@ -274,7 +277,7 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 
 	@Override
 	public boolean updateFilm(Film film) {
-		String sql = "UPDATE film SET title = ?, description = ?, release_year = ?, language_id = 1, rental_duration = ?, rental_rate = ?, length = ?, replacement_cost = ?, rating = ? where id = ?";
+		String sql = "UPDATE film SET title = ?, description = ?, release_year = ?, language_id = '1', rental_duration = ?, rental_rate = ?, length = ?, replacement_cost = ?, rating = ? where id = ?";
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		try {
@@ -295,6 +298,7 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 			if (updateCount != 1) {
 				throw new SQLException();
 			}
+			System.out.println("in uopdate film");
 			conn.commit();
 		} catch (SQLException e) {
 			try {
