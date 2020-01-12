@@ -234,33 +234,44 @@ public class FilmDAOJdbcImpl implements FilmDAO{
 		return film;
 	}
 	
+	@Override
 	public boolean deleteFilm(Film film) {
-		  Connection conn = null;
-		  try {
-		    conn = DriverManager.getConnection(url, user, pass);
-		    conn.setAutoCommit(false); // START TRANSACTION
-		    String sql = "DELETE FROM film WHERE film_id = ?";
-		    PreparedStatement stmt = conn.prepareStatement(sql);
-		    stmt.setInt(1, film.getId());
-		    int updateCount = stmt.executeUpdate();
-		    sql = "DELETE FROM actor WHERE id = ?";
-		    stmt = conn.prepareStatement(sql);
-		    stmt.setInt(1, film.getId());
-		    updateCount = stmt.executeUpdate();
-		    conn.commit();             // COMMIT TRANSACTION
-		  }
-		  catch (SQLException sqle) {
-		    sqle.printStackTrace();
-		    if (conn != null) {
-		      try { conn.rollback(); }
-		      catch (SQLException sqle2) {
-		        System.err.println("Error trying to rollback");
-		      }
-		    }
-		    return false;
-		  }
-		  return true;
+		String sql = "Delete FROM film where id = ?";
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = DriverManager.getConnection(url, user, pass);
+			conn.setAutoCommit(false); // Start Transaction
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, film.getId());
+			int updateCount = stmt.executeUpdate();
+			if (updateCount != 1) {
+				throw new SQLException();
+			}
+			conn.commit(); 
+		} catch (SQLException e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				if (conn != null) {
+					conn.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
 		}
+		return true;
+	}
+
 	
 	public boolean updateFilm(Film film) {
 		  Connection conn = null;
