@@ -11,19 +11,19 @@
 </head>
 <body>
 <section class="findFilm">
-<h3>Find a Film by its ID</h3>
+<h2>Find a Film by its ID</h2>
 <a href="FindFilmById.html">Find Film By Id</a><br>
 </section>
 <section class="createFilm">
-<h3>Create your own film</h3>
+<h2>Create your own film</h2>
 <a href="createFilm.html">Add your own film</a><br>
 </section>
 <section class="deleteFilm">
-<h3>Delete a film</h3>
+<h2>Delete a film</h2>
 <a href="deleteFilm.html">Delete your films</a>
 </section>
 <section class="updateFilm">
-<h3>Update a film</h3>
+<h2>Update a film</h2>
 <a href="updateFilm.html">Update your films</a>
 </section>
 
@@ -34,7 +34,7 @@ body {
 }
 
 .findFilm {
-	height: 100vh;
+  height: 100vh;
   background-color: green;
   background-size: cover;
   background-position: center;
@@ -89,6 +89,9 @@ body {
   align-items: center;
   padding:0 20px;
   color: white;
+ }
+ a {
+ font-size: 20px;
  }
 </style>
 </html>
