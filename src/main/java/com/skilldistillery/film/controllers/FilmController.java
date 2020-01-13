@@ -55,9 +55,9 @@ public class FilmController {
 	}
 
 	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
-	public ModelAndView updateFilm(@RequestParam("id") int id) {
-		System.out.println("In update film.do" + id);
-		Film film = dao.findFilmById(id);
+	public ModelAndView updateFilm(Film film) {
+		//Film film2 = dao.findFilmById(id);
+		System.out.println(film);
 		dao.updateFilm(film);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("Film", film);
